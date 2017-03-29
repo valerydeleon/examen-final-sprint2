@@ -1,43 +1,52 @@
 // var inputNuevoPendiente = document.getElementById('inputNuevoPendiente');
 // var nuevaListaDesordenada = document.createElement("ul");
 
+function agregarTituloPendiente(){
+  var agregarTituloPendiente = document.getElementById('pendienteS');
+  agregarTituloPendiente.innerHTML = inputNuevoPendiente.value;
+}
 
-var arregloPendiente = [];
+var arregloItems = [];
 
-function Pendiente (tituloPendiente, itemPendiente){
-  this.tituloPendiente = tituloPendiente;
+function Item (itemPendiente){
   this.itemPendiente = itemPendiente;
 };
 
+function crearItem(){
+  var itemPendiente = document.getElementById("inputNuevoItem");
 
-function crearPendiente(){
-  var tituloPendiente = document.getElementById('inputNuevoPendiente');
-  var itemPendiente =  document.getElementById('inputNuevoItem');
+  var item = new Item(itemPendiente.value)
 
-  var pendiente = new Pendiente(
-    tituloPendiente.value,
-    itemPendiente.value
-  )
-  tituloPendiente.value = "";
-  itemPendiente.value = "";
-
-  arregloPendiente.push(pendiente);
-  mostrarPendiente();
+    itemPendiente.value = "";
+    arregloItems.push(item);
+    mostrarItem();
 };
 
-function mostrarPendiente(){
-  listaDesordenada = document.createElement("ul");
+var listaDesordenada, nuevoLi;
 
-  var sectionLista = document.getElementById("pendienteS");
+function mostrarItem(){
+  listaDesordenada = document.createElement('li');
+
+  var sectionLista = document.getElementById("itemS");
   sectionLista.innerHTML = "";
 
-  arregloPendiente.forEach(function(pendiente){
-    nuevoLi = document.createElement("li");
-    nuevoLi.innerHTML = pendiente.itemPendiente;
+  arregloItems.forEach(function(item){
+    nuevoLi = document.createElement('li');
+    nuevoLi.innerHTML = item.itemPendiente;
     listaDesordenada.appendChild(nuevoLi);
+    console.log(nuevoli)
   })
   sectionLista.appendChild(listaDesordenada);
+
 }
+
+
+
+// function agregarItem(){
+//   var sectionLista = document.getElementById("itemS");
+//   var contenedorDeItems = document.getElementById("contieneItems");
+//   contenedorDeItems.innerHTML = sectionLista.inn
+// }
 
 
 

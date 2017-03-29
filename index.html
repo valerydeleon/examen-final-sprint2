@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="assets/estilo/estilo.css" >
     <meta charset="utf-8">
     <title>Exámen Sprint2</title>
   </head>
@@ -8,17 +9,19 @@
 
     <h1>Tarjetas de Pendientes</h1>
 
-    <section <h4 id="pendienteS" ></h5>
-      <input id="inputNuevoItem" />
-      <button id="botonCrearItem" onclick="agregarlistaDesordenada()" >+</button>
-      <hr width="80%">
+    <section id="crearNuevoPendient" >
+      <h4>Agregar Pendiente</h4>
+      <input type="text" id="inputNuevoPendiente" placeholder="Nueva Tarea" />
+      <button id="crearPendiente" onclick="agregarTituloPendiente()" > Agregar</button>
     </section>
 
-    <section id="crearNuevoPendiente" >
-      <h4>Agregar Pendiente</h4>
-      <input type="text" id="inputNuevoPendiente" />
-      <button id="crearPendiente" onclick="crearPendiente()" >Nuevo</button>
-    </section>
+    <article id="contiene" >
+      <h4 id="pendienteS" ></h4>
+      <section id="itemS" ></section>
+      <input id="inputNuevoItem" placeholder="nuevo item" />
+      <button id="botonCrearItem" onclick="mostrarItem()" >+</button>
+      <hr width="80%">
+    </article>
 
     <script src="assets/js/main.js" ></script>
   </body>
